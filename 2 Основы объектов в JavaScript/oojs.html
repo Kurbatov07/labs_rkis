@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see 
+      <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+    
+    <script>
+      const person = {
+  name: {
+    first: "Bob",
+    last: "Smith",
+  },
+  age: 32,
+  gender: "male",
+  interests: ["music", "skiing"],
+  bio: function () {
+    alert(
+      this.name[0] +
+        " " +
+        this.name[1] +
+        " is " +
+        this.age +
+        " years old. He likes " +
+        this.interests[0] +
+        " and " +
+        this.interests[1] +
+        "."
+    );
+  },
+  greeting: function () {
+    alert("Hi! I'm " + this.name.first + ".");
+  },
+};
+
+
+person["age"];
+person["name"]["first"];
+
+person.age = 45;
+person["name"]["last"] = "Cratchit";
+person["eyes"] = "hazel";
+person.farewell = function () {
+  alert("Bye everybody!");
+};
+
+person.age;
+person["name"]["last"];
+person["eyes"];
+person.farewell();
+
+let myDataName = "height";
+let myDataValue = "1.75m";
+person[myDataName] = myDataValue;
+person.height;
+
+const person1 = {
+  name: "Chris",
+  greeting: function () {
+    alert("Hi! I'm " + this.name + ".");
+  },
+};
+
+const person2 = {
+  name: "Brian",
+  greeting: function () {
+    alert("Hi! I'm " + this.name + ".");
+  },
+};
+
+person1.greeting();
+person2.greeting();
+
+const myString = "Hello, world!";
+myString.split(",");
+
+const myDiv = document.createElement("div");
+const myVideo = document.querySelector("video");
+
+const myNotification = new Notification("Hello!");
+
+    </script>
+  </body>
+
+</html>
