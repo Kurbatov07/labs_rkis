@@ -118,7 +118,7 @@ function setupProfileEventListeners() {
             CONTENT.innerHTML = responseText;
 
             document.querySelector(`.download1`).addEventListener(`click`, function () {
-                _get(`modules/upload.html`, function (responseText) {
+                _get(`.uploadedfiles`, function (responseText) {
                     CONTENT.innerHTML = responseText;
                 });
             });
@@ -140,7 +140,7 @@ function uploadedfiles() {
     });
 }
 
-/*function loadTable() {
+function loadTable() {
     console.log('makeLoadTable()');
     let adata = new FormData();
     adata.append('token', TOKEN);
@@ -198,9 +198,9 @@ function uploadedfiles() {
         }
     });
 }
-*/
 
-let fdata = new FormData();
+
+/*let fdata = new FormData();
 fdata.append('token', token)
 let xhr = new XMLHttpRequest();
 xhr.open("POST" , `${HOST}/disk`);
@@ -221,6 +221,7 @@ xhr.onreadystatechange = function() {
 function makeLoadTable(data) {
     data.forEach(element => {
         let row = document.createElement('tr')
+        any
         cell = document.createElement('td')
         cell.textContent = element.name
         row.append(cell)
@@ -237,7 +238,11 @@ function makeLoadTablecell (content) {
 
 function makeLoadTable (data) {
     data.forEach(element => {
-        
+        let row = document.createElement('tr')
+
+        row.append(makeLoadTablecell(element.name_file))
+        row.append(makeLoadTablecell(element.download))
     })
 }
+    */
 //#endregion
